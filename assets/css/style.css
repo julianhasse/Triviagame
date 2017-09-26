@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Orbitron');
+
+
+body {
+	height: 100%;
+	background: url('../images/mainBack.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+
+}
+
+.page-header {
+	text-align: center;
+	border-bottom: none;
+}
+
+#headerImage {
+	background: url('../images/trivia.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#result, #answers {
+	text-align: center;
+	height: 40px;
+}
+
+#timer {
+	background: url('../images/timerBack2.png');
+	border-radius: 10px;
+	width: 120px;
+	height:95px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 66px;
+	text-align: center;
+	padding-top: 10px;
+	color: #CBE9C7;
+}
+
+#question {
+	background: url('../images/questionBack.png');
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	border-radius: 10px;
+	color: #CBE9C7;
+	text-align:center;
+	width:500px;
+	height:95px;
+	padding: 15px;
+}
+
+button {
+	height: 30px;
+	width: 500px;
+}
+
+.btn {
+	margin-bottom: 20px;
+	background-color: #D5DD27;
+}
+
+#start, #reset {
+	background-image: url('../images/triviaButton.png');
+	background-repeat: no-repeat;
+    background-position: center center;
+	height: 100px;
+	width: 100px;
+}
+
+.displayNone {
+	display: none;
+}
+
+.buttonStart {
+	margin: 0 auto;
+}
