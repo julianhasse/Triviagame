@@ -12,22 +12,17 @@ body {
 
 }
 
-.page-header {
+.trivia-header {
 	text-align: center;
 	border-bottom: none;
 }
 
-#headerImage {
-	background: url('../images/trivia.png') no-repeat center center fixed;
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 
 #result, #answers {
 	text-align: center;
 	height: 40px;
+	font-family: 'Open Sans', sans-serif;
+	color: #044169;
 }
 
 #timer {
@@ -55,22 +50,30 @@ body {
 }
 
 button {
-	height: 30px;
+	height: 50px;
 	width: 500px;
 }
 
 .btn {
-	margin-bottom: 20px;
-	background-color: #D5DD27;
+	margin-bottom: 15px;
 }
 
 #start, #reset {
-	background-image: url('../images/triviaButton.png');
+	background-image: url('../images/play.png');
 	background-repeat: no-repeat;
     background-position: center center;
-	height: 100px;
-	width: 100px;
+	height: 95px;
+	width: 120px;
 }
+
+#restart {
+	background-image: url('../images/playAgain.png');
+	background-repeat: no-repeat;
+    background-position: center center;
+	height: 95px;
+	width: 120px;
+}
+
 
 .displayNone {
 	display: none;
