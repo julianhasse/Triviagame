@@ -9,6 +9,12 @@ var Trivia = {
 	unAnswered: 0
 } // init
 
+var thumbsUp = '<span class="glyphicon glyphicon-thumbs-up"></span>';
+var thumbsDown = '<span class="glyphicon glyphicon-thumbs-down"></span>';
+var ok = '<span class="glyphicon glyphicon-ok"></span>';
+var bad = '<span class="glyphicon glyphicon-remove"></span>';
+var timeUp = '<span class="glyphicon glyphicon-time"></span>';
+
 
 /* =========== Audio =============================
 // ====================================== */
@@ -44,7 +50,7 @@ function countDown() {
 	Trivia.time --;
 	if (Trivia.time < 0) {
 		Trivia.unAnswered++;
-		$('#result').html('Time is up! The correct answer is ' + questionBank[Trivia.countAnsw].correct);
+		$('#result').html(timeUp + ' Time is up! The correct answer is ' + questionBank[Trivia.countAnsw].correct);
 	ticking.pause();
 	alert.play();	
 		reset();
@@ -79,7 +85,7 @@ function nextQuestion() {
 
 function checkFinalAnswer() {
 	if (Trivia.countAnsw === questionBank.length -1){
-		displayResults();
+		displayScore();
 	}
 } // checkFinalAnswers
 
@@ -87,14 +93,14 @@ function checkAnswer() {
 
 	$('button').on('click', function() {
 		if ($(this).text() == questionBank[Trivia.countAnsw].correct) {
-			$('#result').html('You are right!');
+			$('#result').html(thumbsUp + ' You are right!');
 			ticking.pause();
 			right.play();
 			Trivia.rightAnsw++;
 			reset();
 		} 
 		else {
-			$('#result').html('Wrong. The right answer is ' + questionBank[Trivia.countAnsw].correct);
+			$('#result').html(thumbsDown + ' The right answer is ' + questionBank[Trivia.countAnsw].correct);
 			ticking.pause();
 			wrong.play();
 			Trivia.wrongAnsw++;
@@ -105,11 +111,11 @@ function checkAnswer() {
 	checkFinalAnswer();
 } // checkAnswers
 
-function displayResults() {
+function displayScore() {
 	$('#timer').addClass('displayNone');
-	$('#question').html('Right answers: ' + Trivia.rightAnsw + '<br>');
-	$('#question').append('Wrong answers: ' + Trivia.wrongAnsw + '<br>');
-	$('#question').append('Unanswered: ' + Trivia.unAnswered);
+	$('#question').html(ok + ' Right answers: ' + Trivia.rightAnsw + '<br>');
+	$('#question').append(bad + ' Wrong answers: ' + Trivia.wrongAnsw + '<br>');
+	$('#question').append(timeUp + ' Unanswered: ' + Trivia.unAnswered);
 	$('#answers').html('<button id="restart" class="btn btn-default center-block"></button>');
 
 	$("#restart").click(function() {
