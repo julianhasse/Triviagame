@@ -1,33 +1,33 @@
 var questionBank = [
 
 	{
-		question: 'Who played lead guitar for the British rock band Queen?',
-		answers: ['Jimmy Page', 'Brian May', 'Jeff Beck', 'Eric Clapton'],
-		correct: 'Brian May'
+		question: '"Big Ben" is located in which major European city?',
+		answers: ['Rome', 'Abu Dhabi', 'Paris', 'London'],
+		correct: 'London'
 	},
 
 	{
-		question: 'In music, the space between one musical pitch and another with double its frequency is called what?',
-		answers: ['Unison', 'Chord', 'Octave', 'Double'],
-		correct: 'Octave'
+		question: 'Which French city is known famously as "The City of Lights"?',
+		answers: ['Lyon', 'Versailles', 'Nice', 'Paris'],
+		correct: 'Paris'
 	},
 
 	{
-		question: 'Which of the Beatles is barefoot on the Abby Road album cover?',	
-		answers: ['John Lennon', 'Ringo Starr', 'Paul McCartney', 'George Harrison'],
-		correct: 'Paul McCartney'
+		question: 'New Delhi is the National Capital of which country?',	
+		answers: ['Sri Lanka', 'India', 'Egypt', 'Saudi Arabia'],
+		correct: 'India'
 	},
 
 	{
-		question: 'What American singer-songwriter wrote and first recorded the song "Blue Suede Shoes" in 1955?',	
-		answers: ['Buddy Holly', 'Carl Perkins', 'Elvis Presley', 'Roy Orbison'],
-		correct: 'Carl Perkins'
+		question: 'This Italian city once spawned an entire Empire that ruled most of Europe',	
+		answers: ['Madrid', 'Athens', 'Rome', 'Naples'],
+		correct: 'Rome'
 	},
 
 	{
-		question: 'What song by Michael Jackson contains the lyrics "Annie are you OK?"',	
-		answers: ['Thriller', 'Bad', 'Smooth Criminal', 'Black or White'],
-		correct: 'Smooth Criminal'
+		question: 'Which city houses The Parthenon, an Ancient temple dedicated to the Godess Athena?',	
+		answers: ['Venice', 'Athens', 'Berlin', 'Istanbul'],
+		correct: 'Athens'
 	},
 
 	{
@@ -43,15 +43,15 @@ var questionBank = [
 	},
 
 	{
-		question: 'How many keys are on most baby grand pianos?',	
-		answers: ['100', '99', '88', '77'],
-		correct: '88'
+		question: 'In which country are located the Iguazu Falls?',	
+		answers: ['Peru', 'Chile', 'Argentina', 'Uruguay'],
+		correct: 'Argentina'
 	},
 
 	{
-		question: 'Which pop star sang the national anthem at the 50th Super Bowl?',	
-		answers: ['Madonna', 'Katy Perry', 'Beyoncé', 'Lady Gaga'],
-		correct: 'Lady Gaga'
+		question: 'Bangkok is a major city in which country?',	
+		answers: ['Thailand', 'Singapore', 'The Phillipines', 'Cambodia'],
+		correct: 'Thailand'
 	},
 
 	{
@@ -61,8 +61,8 @@ var questionBank = [
 	},
 
 	{
-		question: 'Which rock music group has received the most Grammy Awards?',	
-		answers: ['The Rolling Stones', 'Nirvana', 'U2', 'AC/DC'],
-		correct: 'U2'
+		question: 'Which South American city has this massive statue of Jesus towering over it?',	
+		answers: ['Bogota', 'Rio De Janeiro', 'Buenos Aires', 'San Paulo'],
+		correct: 'Rio De Janeiro'
 	}
 ];

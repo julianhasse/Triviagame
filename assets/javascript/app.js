@@ -9,6 +9,9 @@ var Trivia = {
 	unAnswered: 0
 } // init
 
+
+/* =========== Glyphicons ==================
+// ====================================== */
 var thumbsUp = '<span class="glyphicon glyphicon-thumbs-up"></span>';
 var thumbsDown = '<span class="glyphicon glyphicon-thumbs-down"></span>';
 var ok = '<span class="glyphicon glyphicon-ok"></span>';
@@ -44,46 +47,50 @@ function shuffle(array) {
 /* ========== Main Functions =============
 // ====================================== */
 
-function countDown() {
+function counter() {
 	$('#timer').html(Trivia.time);
 	ticking.play();
 	Trivia.time --;
 	if (Trivia.time < 0) {
 		Trivia.unAnswered++;
-		$('#result').html(timeUp + ' Time is up! The correct answer is ' + questionBank[Trivia.countAnsw].correct);
+		$('#result').html(timeUp + ' The correct answer is ' + questionBank[Trivia.countAnsw].correct);
 	ticking.pause();
 	alert.play();	
-		reset();
+		resetTimers();
 	}
-} // countdown timer (10 seconds)
+} // counter (10 seconds)
 
-function getQuestion() {
+function startTrivia() {
 	$('#timer').html(Trivia.time);
 	$('#start').css('display', 'none');
 	$('#startText').css('display', 'none');
 	$('#timer').removeClass('displayNone');
+	$('#question').css("background-image","url(assets/images/questionBack.png)");
+	$('#result').css("background-image","url(assets/images/backResults.png)");
+	$('#result').empty();
+	
 
-	timer = setInterval(countDown, 1000);
+	timer = setInterval(counter, 1000);
 	
 	shuffle(questionBank[Trivia.countAnsw].answers);
 	
 	$('#question').append(questionBank[Trivia.countAnsw].question);
 	
 	for (var i = 0; i < questionBank[Trivia.countAnsw].answers.length; i++) {
-		var btn = $('<button class="btn btn-primary btn-rounded">'); // generate buttons
+		var btn = $('<button class="btn btn-primary btn-rounded">'); 
 		btn.text(questionBank[Trivia.countAnsw].answers[i]);
 		btn.appendTo('#button' + i);
 	}
 	checkAnswer();
-} // getQuestion
+} // startTrivia
 
 function nextQuestion() {
 	Trivia.time = 10;
 	$('#timer').html(Trivia.time);
-	getQuestion();
+	startTrivia();
 } // nextQuestion
 
-function checkFinalAnswer() {
+function checkLastAnswer() {
 	if (Trivia.countAnsw === questionBank.length -1){
 		displayScore();
 	}
@@ -97,22 +104,23 @@ function checkAnswer() {
 			ticking.pause();
 			right.play();
 			Trivia.rightAnsw++;
-			reset();
+			resetTimers();
 		} 
 		else {
 			$('#result').html(thumbsDown + ' The right answer is ' + questionBank[Trivia.countAnsw].correct);
 			ticking.pause();
 			wrong.play();
 			Trivia.wrongAnsw++;
-			reset();
+			resetTimers();
 		}
 	});
 
-	checkFinalAnswer();
+	checkLastAnswer();
 } // checkAnswers
 
 function displayScore() {
 	$('#timer').addClass('displayNone');
+	$('#result').text("Thank you for playing!")
 	$('#question').html(ok + ' Right answers: ' + Trivia.rightAnsw + '<br>');
 	$('#question').append(bad + ' Wrong answers: ' + Trivia.wrongAnsw + '<br>');
 	$('#question').append(timeUp + ' Unanswered: ' + Trivia.unAnswered);
@@ -129,7 +137,7 @@ function displayScore() {
 /* ========== Reset Functions =============
 // ====================================== */
 
-function empty() {
+function resetText() {
 	for (var i = 0; i < 4; i++) {
 		$('#button' + i).empty();
 	}
@@ -138,11 +146,11 @@ function empty() {
 } // clear text
 
 
-function reset() {
+function resetTimers() {
 	Trivia.countAnsw++;
 	clearInterval(timer);
-	setTimeout(empty, 3000);
-	setTimeout(nextQuestion, 3000);
+	setTimeout(resetText, 2000);
+	setTimeout(nextQuestion, 2000);
 } // reset timers
 
 
@@ -152,5 +160,5 @@ function resetGame() {
 	Trivia.rightAnsw = 0;
 	Trivia.wrongAnsw = 0;
 	Trivia.unAnswered = 0;
-	setTimeout(getQuestion, 500);
+	setTimeout(startTrivia, 500);
 } //reset game

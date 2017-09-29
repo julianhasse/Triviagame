@@ -18,15 +18,32 @@ body {
 }
 
 
-#result, #answers {
+#result {
+	background: url('../images/backResultsInit.png');
+	text-align: center;
+	padding: 10px;
+	height: 50px;
+	width:500px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	color: #FFFB98;
+	border-bottom: none;
+	border-radius: 3px;
+	border:0;
+    box-shadow:0;
+    border-radius:5;
+}
+
+#answers {
 	text-align: center;
 	height: 40px;
 	font-family: 'Open Sans', sans-serif;
-	color: #044169;
+	color: #FFFFFF;
 }
 
+
 #timer {
-	background: url('../images/timerBack2.png');
+	background: url('../images/timerBack.png');
 	border-radius: 10px;
 	width: 120px;
 	height:95px;
@@ -34,20 +51,21 @@ body {
 	font-size: 66px;
 	text-align: center;
 	padding-top: 10px;
-	color: #CBE9C7;
+	color: #FFFB98;
 }
 
 #question {
-	background: url('../images/questionBack.png');
+	background: url('../images/triviaLogo.png');
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	border-radius: 10px;
-	color: #CBE9C7;
+	color: #FFFB98;
 	text-align:center;
 	width:500px;
 	height:95px;
 	padding: 15px;
 }
+
 
 button {
 	height: 50px;
@@ -58,12 +76,15 @@ button {
 	margin-bottom: 15px;
 }
 
-#start, #reset {
+#start {
 	background-image: url('../images/play.png');
 	background-repeat: no-repeat;
     background-position: center center;
 	height: 95px;
 	width: 120px;
+	border:0;
+    box-shadow:0;
+    border-radius:5;
 }
 
 #restart {
@@ -72,6 +93,9 @@ button {
     background-position: center center;
 	height: 95px;
 	width: 120px;
+	border:0;
+    box-shadow:0;
+    border-radius:5;
 }
 
 

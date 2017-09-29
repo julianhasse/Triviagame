@@ -2,7 +2,7 @@
 <html lang="us-en">
   <head>
       <meta charset="UTF-8">
-      <title>You Don't Know Jack!</title>
+      <title>Travel Trivia</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
@@ -11,17 +11,16 @@
     <header class="trivia-header">
 	    <div>
 		    <h1 id="timer" class="displayNone center-block">		
-		    </h1>
-	    </div>
-	    <img id="headerImage" src="assets/images/trivia.png">
+			</h1>
+		</div>
+	        <img id="headerImage" src="assets/images/trivia.png">
     </header>
 
 
 	<div id="question" class="center-block"></div>
 
 
-	<h3 id="result">
-	</h3>
+	<h3 id="result" class="center-block"></h3>
 
 	<h3 id="answers">
 		<div id="button0">
@@ -36,7 +35,7 @@
 
 	<div class="buttonStart">
 		<h2 id="startText" class="text-center"></h2>
-		<button id="start" class="btn btn-default center-block" onclick="setTimeout(getQuestion, 250)">
+		<button id="start" class="btn btn-default center-block" onclick="setTimeout(startTrivia, 250)">
 		</button>
 		
 		<h2 id="resetText" class="text-center displayNone"></h2>
