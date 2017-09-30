@@ -47,6 +47,12 @@ function shuffle(array) {
 /* ========== Main Functions =============
 // ====================================== */
 
+$('#start').on('click', function(){
+	
+	setTimeout(startTrivia, 250);
+
+});
+
 function counter() {
 	$('#timer').html(Trivia.time);
 	ticking.play();
@@ -79,7 +85,7 @@ function startTrivia() {
 	for (var i = 0; i < questionBank[Trivia.countAnsw].answers.length; i++) {
 		var btn = $('<button class="btn btn-primary btn-rounded">'); 
 		btn.text(questionBank[Trivia.countAnsw].answers[i]);
-		btn.appendTo('#button' + i);
+		btn.appendTo('#btn' + i);
 	}
 	checkAnswer();
 } // startTrivia
@@ -101,6 +107,7 @@ function checkAnswer() {
 	$('button').on('click', function() {
 		if ($(this).text() == questionBank[Trivia.countAnsw].correct) {
 			$('#result').html(thumbsUp + ' You are right!');
+			$('#headerImage').css("background-image",`url(assets/images/${questionBank[Trivia.countAnsw].correct}.png)`);
 			ticking.pause();
 			right.play();
 			Trivia.rightAnsw++;
@@ -108,6 +115,7 @@ function checkAnswer() {
 		} 
 		else {
 			$('#result').html(thumbsDown + ' The right answer is ' + questionBank[Trivia.countAnsw].correct);
+			$('#headerImage').css("background-image","url(assets/images/fail.png)");
 			ticking.pause();
 			wrong.play();
 			Trivia.wrongAnsw++;
@@ -125,6 +133,8 @@ function displayScore() {
 	$('#question').append(bad + ' Wrong answers: ' + Trivia.wrongAnsw + '<br>');
 	$('#question').append(timeUp + ' Unanswered: ' + Trivia.unAnswered);
 	$('#answers').html('<button id="restart" class="btn btn-default center-block"></button>');
+	$('#headerImage').css("background-image","url(assets/images/trivia.png)");
+
 
 	$("#restart").click(function() {
 		location.reload();
@@ -139,7 +149,7 @@ function displayScore() {
 
 function resetText() {
 	for (var i = 0; i < 4; i++) {
-		$('#button' + i).empty();
+		$('#btn' + i).empty();
 	}
 	    $('#question').empty();
 	    $('#result').empty();

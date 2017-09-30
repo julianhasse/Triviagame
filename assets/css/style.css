@@ -3,6 +3,7 @@
 
 body {
 	height: 100%;
+	background-color: black;
 	background: url('../images/mainBack.png') no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
@@ -17,6 +18,13 @@ body {
 	border-bottom: none;
 }
 
+#headerImage {
+	margin:10px;
+	border:0;
+    box-shadow:0;
+    border-radius:5px;
+
+}
 
 #result {
 	background: url('../images/backResultsInit.png');
@@ -28,7 +36,6 @@ body {
 	font-size: 20px;
 	color: #FFFB98;
 	border-bottom: none;
-	border-radius: 3px;
 	border:0;
     box-shadow:0;
     border-radius:5;
